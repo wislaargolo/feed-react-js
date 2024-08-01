@@ -1,11 +1,13 @@
-import styles from './Post.module.css'
+import { Avatar } from './Avatar';
+import { Comment } from './Comment';
+import styles from './Post.module.css';
 
 export function Post() {
     return (
         <article className={styles.post}>
             <header className={styles.headerPost}>
                 <div className={styles.author}>
-                    <img className={styles.avatar} src="https://github.com/wislaargolo.png"/>
+                    <Avatar src="https://github.com/wislaargolo.png"/>
                     <div className={styles.authorInfo}>
                         <strong>Wisla Argolo</strong>
                         <span>Estudante</span>
@@ -29,6 +31,22 @@ export function Post() {
                     <a href="">#rocketseat</a>
                 </p>
             </div>
+
+            <form action="" className={styles.commentForm}>
+                <strong>Deixe seu feedback</strong>
+
+                <textarea placeholder='Deixe um comentário'></textarea>
+
+                <footer>
+                    <button type='submit'>Publicar</button>
+                </footer>
+            </form>
+
+            <div className={styles.commentList}>
+                <Comment />
+                <Comment />
+                <Comment />
+            </div>
         </article>
-    )
+    );
 }
