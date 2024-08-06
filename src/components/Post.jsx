@@ -10,18 +10,18 @@ export function Post({ author, publishedAt, content }) {
 
     const [comments, setComments] = useState([
         'Post muito bacana!'
-    ])
+    ]);
 
     const [newCommentText, setNewCommentText] = useState('');
 
     const publishedDateFormatted = format(publishedAt, "dd 'de' LLLL 'às' HH:MM'h'", {
         locale: ptBR
-    })
+    });
 
     const publishedDateRelativeToNow = formatDistanceToNow(publishedAt, {
         locale: ptBR,
         addSuffix: true
-    })
+    });
 
     function handleCreateNewComment() {
         event.preventDefault();
